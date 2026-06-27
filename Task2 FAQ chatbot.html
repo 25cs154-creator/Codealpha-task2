@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ Chatbot</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f2f2f2;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+.container{
+    width:400px;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+    text-align:center;
+}
+input{
+    width:90%;
+    padding:10px;
+    margin-bottom:10px;
+}
+button{
+    padding:10px 20px;
+    cursor:pointer;
+}
+#answer{
+    margin-top:20px;
+    border:1px solid #ccc;
+    padding:10px;
+    min-height:50px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+<h2>FAQ Chatbot</h2>
+
+<input type="text" id="question" placeholder="Ask a question...">
+
+<br>
+
+<button onclick="getAnswer()">Ask</button>
+
+<div id="answer">Your answer will appear here.</div>
+
+</div>
+
+<script>
+function getAnswer(){
+
+let q = document.getElementById("question").value.toLowerCase().trim();
+let ans = "Sorry! I don't know the answer.";
+
+if(q.includes("ai") || q.includes("artificial intelligence")){
+    ans = "Artificial Intelligence (AI) is the simulation of human intelligence by machines.";
+}
+else if(q.includes("machine learning")){
+    ans = "Machine Learning is a branch of AI that enables computers to learn from data.";
+}
+else if(q.includes("python")){
+    ans = "Python is a popular programming language.";
+}
+else if(q.includes("java")){
+    ans = "Java is an object-oriented programming language.";
+}
+else if(q.includes("html")){
+    ans = "HTML is used to create web pages.";
+}
+else if(q.includes("css")){
+    ans = "CSS is used to style web pages.";
+}
+else if(q.includes("chatgpt")){
+    ans = "ChatGPT is an AI chatbot developed by OpenAI.";
+}
+else if(q.includes("hello") || q.includes("hi")){
+    ans = "Hello! How can I help you?";
+}
+
+document.getElementById("answer").innerHTML = ans;
+}
+</script>
+
+</body>
+</html>
